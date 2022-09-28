@@ -8,37 +8,6 @@ class FuncoesBanco:
         self.clientes_banco = clientes_banco
         self.contas_banco = contas_banco
 
-    def criar_cliente(clientes_banco, contas_banco):
-        nome_cliente = input("Digite seu nome: ").strip()
-        if nome_cliente in clientes_banco or nome_cliente in contas_banco:
-            print("Cliente já existente!")
-        else:
-            clientes_banco[nome_cliente] = {
-                "nome": nome_cliente
-            }
-            print(f"Cliente {nome_cliente} cadastrado!")
-
-        return clientes_banco
-
-    def cadastrar_conta(clientes_banco, contas_banco):
-        print("Qual cliente deseja vincular a conta?")
-
-        for cliente in clientes_banco:
-            print(f"{cliente}")
-
-        contas_adicionar = input("Digite a sua opção: ").strip()
-        if contas_adicionar not in clientes_banco:
-            print("Cliente não encontrado, para criar uma conta, primeiro cadastre-se.")
-
-        else:
-            contas_banco[contas_adicionar] = clientes_banco[contas_adicionar]
-            del clientes_banco[contas_adicionar]
-            contas_banco[contas_adicionar] = {
-                "Saldo": 0,
-                "Saques Diários": 3
-            }
-        return contas_banco, clientes_banco
-
     def realizar_extrato(extrato, saldo_total, saque_diario):
         print(f"\n**********EXTRATO**********")
         print("Não realizadas movimentações!" if not extrato else extrato)
