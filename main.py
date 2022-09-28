@@ -6,6 +6,7 @@ saque_diario = 3
 extrato = ""
 
 
+clientes_banco = {}
 contas_banco = {}
 
 funcionamento = FuncoesBanco
@@ -23,12 +24,13 @@ print(f"""
 
 while operacao != 6:
 
-
     operacao = int(input("Digite a operação desejada: "))
 
     if operacao == 1:
-        contas_banco = funcionamento.criar_cliente(contas_banco)
+        clientes_banco = funcionamento.criar_cliente(clientes_banco, contas_banco)
 
+    elif operacao == 2:
+        contas_banco, clientes_banco = funcionamento.cadastrar_conta(clientes_banco, contas_banco)
 
     elif operacao == 3:
         funcionamento.realizar_extrato(extrato, saldo_total, saque_diario)
