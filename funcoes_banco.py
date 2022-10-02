@@ -8,11 +8,12 @@ class FuncoesBanco:
         self.clientes_banco = clientes_banco
         self.contas_banco = contas_banco
 
-    def realizar_extrato(extrato, saldo_total, saque_diario):
+    def realizar_extrato(nome, cpf, extrato, saldo_total, saque_diario):
         print(f"\n**********EXTRATO**********")
-        print("Não realizadas movimentações!" if not extrato else extrato)
+        print(f"{nome} - {cpf}\n")
+        print("Não realizadas movimentações!\n" if not extrato else extrato)
         print(f"Saldo total: R${saldo_total:.2f}\n"
-              f"Total de saques diários: {saque_diario}\n"
+              f"\nSaques disponíveis: {saque_diario}\n"
               f"***************************\n")
 
     def realizar_deposito(extrato, saldo_total):
