@@ -1,5 +1,3 @@
-# import defs
-
 
 def valida_nome(nome):
 
@@ -87,9 +85,12 @@ def valida_endereco(endereco):
 
 
 def cliente_unico(cpf, clientes):
-    for user in clientes:
-        if cpf == user[0]:
-            print("Cliente já cadastrado!")
-            return False
-        else:
-            return True
+    if clientes:
+        for user in clientes:
+            if cpf == user[0]:
+                print("Cliente já cadastrado!")
+                return False
+            else:
+                return True
+    else:
+        return True
