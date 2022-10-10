@@ -67,7 +67,7 @@ def valida_endereco(endereco):
     while not endereco:
         print("Digite seu esdereço completo.")
         while not nome_rua:
-            nome_rua = str(input("Nome da rua:")).title()
+            nome_rua = str(input("Nome da rua: ")).title()
         while not numero_rua:
             numero_rua = str(input("Número da casa, prédio e/ou apartamento: ")).title()
         while not nome_bairro:
